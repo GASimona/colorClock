@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by GASimona (http://jsbin.com/bovutok/5/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ceas Color</title>
+   
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="function.js"></script>
+
+    
+<style id="jsbin-css">
+* { margin: 0; padding: 0; }
+
+html, body {
+    height: 100%;
+}
+
+#clock {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    padding-top: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 100px;
+    margin-top: -50px;
+}
+</style>
+</head>
+    
+<body>
+    <div id="clock">12:13:14</div>
+<script id="jsbin-javascript">
+function colorClock() {
+
+    var date = new Date();
+
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+
+    if (hours < 10) {
+        hours = '0' + hours;
+    }
+    if (minutes < 10) {
+        minutes = '0'+minutes;
+    }
+    if (seconds < 10) {
+        seconds = '0' + seconds;
+    }
+    
+    var hexColor = '#' + 'af' + minutes + seconds;
+
+    var clockFace = hours+':'+minutes+':'+seconds;
+       
+    document.getElementById('clock').innerHTML = clockFace;  
+    
+    document.body.style.background = hexColor;
+    
+ document.getElementById('clock').style.background = '	#008b8b';
+    
+    
+    setTimeout(function() {
+        colorClock();
+    }, 1000);
+
+   
+}
+
+
+colorClock();
+
+
+</script>
+</body>
+</html>
